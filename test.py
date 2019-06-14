@@ -105,6 +105,4 @@ async def guess(ctx):
         await ctx.send("wrong input")
     
     print(f'your number is{total}')
-
-    
 client.run('NTg3NzA3ODYwMDE2NjkzMjU4.XQJ7Bg.BgoZHKatBm5ctjAplPt45tFTSX0')
