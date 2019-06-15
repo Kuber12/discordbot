@@ -80,7 +80,7 @@ async def highlow(ctx):
 async def bank(ctx):
     cards=["ace","two","three","four","five","six","seven","eight","nine","ten","jack","queen","king"]
     suits=["of hearts","of clubs","of diamonds","of spades"]
-    await ctx.send(f'{random.cards} {random.suits}')
+    await ctx.send(f'{random.choice(cards)} {random.choice(suits)}')
        
     
 client.run('NTg3NzA3ODYwMDE2NjkzMjU4.XQJ7Bg.BgoZHKatBm5ctjAplPt45tFTSX0')
