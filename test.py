@@ -1,7 +1,7 @@
 import discord
 import random
 from discord.ext import commands
-client = commands.Bot(command_prefix = '-')
+client = commands.Bot(command_prefix = '-',case_insensitive=True)
 
 @client.event
 async def on_ready():
@@ -20,8 +20,8 @@ async def ping(ctx):
     await ctx.send(f'Pong! {round(client.latency*1000)}ms')
 
 @client.command()
-async def highfive(ctx):
-    await ctx.send('highfive')
+async def hello(ctx):
+    await ctx.send('yo')
 
 @client.command(aliases=['8ball','text'])
 async def _8ball(ctx, *,question):
@@ -39,7 +39,7 @@ async def _8ball(ctx, *,question):
                 'Not a chance',
                 'Never',
                 'Ask yourself',
-                'Nah, Im Bored'
+                'Nah, Im bored try later',
                 'There is a little chance']
     await ctx.send(f'Question: {question}\nAnswer: {random.choice(responses)}')
 
@@ -77,32 +77,10 @@ async def highlow(ctx):
         await ctx.send('You win')
 
 @client.command()
-async def guess(ctx):
-    await ctx.send('think a number from  - ')
-    await ctx.send('press y if you see your number and n if you dont see you number')
-    enter=str(input("1,3,5,7"))
-    if enter is "y":
-        total = total + 1
-    elif enter is "n":
-        await ctx.send("soka")
-    else:
-        await ctx.send("wrong input")
+async def bank(ctx):
+    cards=["ace","two","three","four","five","six","seven","eight","nine","ten","jack","queen","king"]
+    suits=["of hearts","of clubs","of diamonds","of spades"]
+    await ctx.send(f'{random.cards} {random.suits}')
+       
     
-    enter=str(input("2,3,6,7"))
-    if enter is "y":
-        total = total + 2
-    elif enter is "n":
-        await ctx.send("soka")
-    else:
-        await ctx.send("wrong input")
-    
-    enter=str(input("4,5,6,7"))
-    if enter is "y":
-        total = total + 4
-    elif enter is "n":
-        await ctx.send("soka")
-    else:
-        await ctx.send("wrong input")
-    
-    print(f'your number is{total}')
 client.run('NTg3NzA3ODYwMDE2NjkzMjU4.XQJ7Bg.BgoZHKatBm5ctjAplPt45tFTSX0')
