@@ -82,7 +82,9 @@ async def bank(ctx):
     suits=[" of hearts"," of clubs"," of diamonds"," of spades"]
     firstCard = random.choice(cards) + random.choice(suits)
     secondCard = random.choice(cards) + random.choice(suits)
-        await ctx.send(f'{firstCard},{secondCard}')
+        await ctx.send(f'{firstCard}')
+        await ctx.send(f'{secondCard}')
+        
 
        
     
