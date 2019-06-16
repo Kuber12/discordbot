@@ -78,13 +78,13 @@ async def highlow(ctx):
 
 @client.command()
 async def bank(ctx):
-    cards=['ace','two','three','four','five','six','seven','eight','nine','ten','jack','queen','king']
+    cards=['ace':1,'two':2,'three':3,'four':4,'five':5,'six':6,'seven':7,'eight':8,'nine':9,'ten':10,'jack':11,'queen':12,'king':13]
     suits=[' of hearts',' of clubs',' of diamonds',' of spades']
-    firstCard = random.choice(cards) + random.choice(suits)
-    secondCard = random.choice(cards) + random.choice(suits)
+    firstCard = random.choice(cards.keys()) + random.choice(suits)
+    secondCard = random.choice(cards.keys()) + random.choice(suits)
     await ctx.send(firstCard)
     await ctx.send(secondCard)
-    await ctx.send("how much do you want to bet")
+    await ctx.send("What do you want to bet")
     
 
        
