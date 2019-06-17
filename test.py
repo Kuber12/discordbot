@@ -1,7 +1,7 @@
 import discord
 import random
 from discord.ext import commands
-client = commands.Bot(command_prefix = '-',case_insensitive=True)
+client = commands.Bot(command_prefix = 'do',case_insensitive=True)
 
 @client.event
 async def on_ready():
@@ -79,18 +79,9 @@ async def highlow(ctx):
 @client.command()
 async def bank(ctx):
     cards=['ace','two','three','four','five','six','seven','eight','nine','ten','jack','queen','king']
-    suits=[' of hearts',' of clubs',' of diamonds',' of spades']
-    for f in cards.items():
-        await ctx.send(cards(f))
-              
+    suits=[' of hearts',' of clubs',' of diamonds',' of spades']      
     firstCard = random.choice(cards) + random.choice(suits)
     secondCard = random.choice(cards) + random.choice(suits)
-    await ctx.send(firstCard)
-    await ctx.send(secondCard)
-    await ctx.send("What do you want to bet")
-    await ctx.send(cards)
     
 
-       
-    
 client.run('NTg3NzA3ODYwMDE2NjkzMjU4.XQJ7Bg.BgoZHKatBm5ctjAplPt45tFTSX0')
