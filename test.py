@@ -1,7 +1,7 @@
 import discord
 import random
 from discord.ext import commands
-client = commands.Bot(command_prefix = 'do',case_insensitive=True)
+client = commands.Bot(command_prefix = 'do ',case_insensitive=True)
 
 @client.event
 async def on_ready():
