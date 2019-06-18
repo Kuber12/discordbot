@@ -84,6 +84,6 @@ async def bank(ctx):
     rsuit=random.choice(suits)
     finalRes=rcard + rsuit
     await ctx.send(finalRes)
-    cardsUsed = cardsUsed.extend(finalRes)
+    cardsUsed.extend(finalRes)
     await ctx.send(cardsUsed)
 client.run('NTg3NzA3ODYwMDE2NjkzMjU4.XQJ7Bg.BgoZHKatBm5ctjAplPt45tFTSX0')
