@@ -85,6 +85,6 @@ async def bank(ctx):
         cardSuit=card + random.choice(suits)
     
     a = randomCard()
-    await ctx.send(a)
+    await ctx.send({a})
 
 client.run('NTg3NzA3ODYwMDE2NjkzMjU4.XQJ7Bg.BgoZHKatBm5ctjAplPt45tFTSX0')
