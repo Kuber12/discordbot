@@ -85,12 +85,12 @@ async def bank(ctx):
     rsuit=random.choice(suits)
     finalRes=rcard + rsuit
     playerSum=playerSum + rcard
-    await ctx.send("you got "{finalRes} "and")
+    await ctx.send(f'you got '{finalRes})
     rcard=random.choice(cards)
     rsuit=random.choice(suits)
     finalRes=rcard + rsuit
     playerSum=playerSum + rcard
-    await ctx.send("you got "{finalRes})
+    await ctx.send(f'you got '{finalRes})
     await ctx.send("you want to hit:h or stay:s ?")
 
 
