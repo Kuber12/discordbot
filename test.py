@@ -79,13 +79,10 @@ async def highlow(ctx):
 @client.command()
 async def bank(ctx):
     cards=['ace','two','three','four','five','six','seven','eight','nine','ten','jack','queen','king']
-    suits=[' of hearts',' of clubs',' of diamonds',' of spades']      
-    def randomCard():
-        card=random.choice(cards)
-        cardSuit=card + random.choice(suits)
-    
-    randomCard()
-    a = cardSuit
-    await ctx.send({a})
+    suits=[' of hearts',' of clubs',' of diamonds',' of spades']
+    rcard=random.choice(cards)
+    rsuit=radnom.suit(suits)
+    finalres=suits+rcard
+    await ctx.send(finalres)
 
 client.run('NTg3NzA3ODYwMDE2NjkzMjU4.XQJ7Bg.BgoZHKatBm5ctjAplPt45tFTSX0')
