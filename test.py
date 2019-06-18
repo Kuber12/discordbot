@@ -76,23 +76,23 @@ async def highlow(ctx):
     else:
         await ctx.send('You win')
 
-@client.command()
-async def bank(ctx):
-    finalRes=0
-    cards=['ace','two','three','four','five','six','seven','eight','nine','ten','jack','queen','king']
-    suits=[' of hearts',' of clubs',' of diamonds',' of spades']
-    rcard=random.choice(cards)
-    rsuit=random.choice(suits)
-    finalRes=rcard + rsuit
-    playerSum=playerSum + rcard
-    await ctx.send(f'you got '{finalRes})
-    rcard=random.choice(cards)
-    rsuit=random.choice(suits)
-    finalRes=rcard + rsuit
-    playerSum=playerSum + rcard
-    await ctx.send(f'you got '{finalRes})
-    await ctx.send("you want to hit:h or stay:s ?")
-
+#@client.command()
+#sync def bank(ctx):
+#    finalRes=int(0)
+#    playerSum=int(0)
+#    cards=['ace','two','three','four','five','six','seven','eight','nine','ten','jack','queen','king']
+#    suits=[' of hearts',' of clubs',' of diamonds',' of spades']
+#    rcard=random.choice(cards)
+#    rsuit=random.choice(suits)
+#    finalRes=rcard + rsuit
+#    playerSum=playerSum + rcard
+#    await ctx.send(f'you got {finalRes}')
+#    rcard=random.choice(cards)
+#    rsuit=random.choice(suits)
+#    finalRes=rcard + rsuit
+#    playerSum=playerSum + rcard
+#    await ctx.send(f'you got {finalRes}')
+#    await ctx.send("you want to hit:h or stay:s ?")
 
 
 
