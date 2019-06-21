@@ -76,15 +76,15 @@ async def highlow(ctx):
     else:
         await ctx.send('You win')
 
-@commands.command(pass_content=True)
+@commands.command()
 async def yesorno(ctx):
-	await client.say('Discord, yes or no?')
-	response = client.wait_for_message(author=ctx.message.author, timeout=30)
+	await ctx.send('Discord, yes or no?')
+	response = ctx.wait_for_message(author=ctx.message.author, timeout=30)
 	if response.clean_content.lower() == 'yes':
-		await client.say('You said yes.')
+		await ctx.send('You said yes.')
 	elif response.clean_content.lower() == 'no':
-		await client.say('You said no.')
+		await ctx.send('You said no.')
 	else:
-		await client.say("That isn't a valid response.")
+		await ctx.send("That isn't a valid response.")
 
 client.run('NTg3NzA3ODYwMDE2NjkzMjU4.XQJ7Bg.BgoZHKatBm5ctjAplPt45tFTSX0')
