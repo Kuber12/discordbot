@@ -76,13 +76,15 @@ async def highlow(ctx):
     else:
         await ctx.send('You win')
 
-@bot.command(pass_context=True)
-async def test(ctx, *args):
-    if not args:
-        await bot.say("Try using an argument. For example: !test yes")
-    elif args[0] == "yes":
-        await bot.say("This is a valid argument!")
-    else:
-        await bot.say("Not a valid argument!")
+@commands.command(pass_content=True)
+async def yesorno(ctx):
+	await client.say('Discord, yes or no?')
+	response = client.wait_for_message(author=ctx.message.author, timeout=30)
+	if response.clean_content.lower() == 'yes':
+		await client.say('You said yes.')
+	elif response.clean_content.lower() == 'no':
+		await client.say('You said no.')
+	else:
+		await client.say("That isn't a valid response.")
 
 client.run('NTg3NzA3ODYwMDE2NjkzMjU4.XQJ7Bg.BgoZHKatBm5ctjAplPt45tFTSX0')
