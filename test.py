@@ -76,23 +76,16 @@ async def highlow(ctx):
     else:
         await ctx.send('You win')
 
-#@client.command()
-#sync def bank(ctx):
-#    finalRes=int(0)
-#    playerSum=int(0)
-#    cards=['ace','two','three','four','five','six','seven','eight','nine','ten','jack','queen','king']
-#    suits=[' of hearts',' of clubs',' of diamonds',' of spades']
-#    rcard=random.choice(cards)
-#    rsuit=random.choice(suits)
-#    finalRes=rcard + rsuit
-#    playerSum=playerSum + rcard
-#    await ctx.send(f'you got {finalRes}')
-#    rcard=random.choice(cards)
-#    rsuit=random.choice(suits)
-#    finalRes=rcard + rsuit
-#    playerSum=playerSum + rcard
-#    await ctx.send(f'you got {finalRes}')
-#    await ctx.send("you want to hit:h or stay:s ?")
+@commands.command(pass_content=True)
+async def yesorno(ctx):
+	await client.say('Discord, yes or no?')
+	response = client.wait_for_message(author=ctx.message.author, timeout=30)
+	if response.clean_content.lower() == 'yes':
+		await client.say('You said yes.')
+	elif response.clean_content.lower() == 'no':
+		await client.say('You said no.')
+	else:
+		await client.say("That isn't a valid response.")
 
 
 
